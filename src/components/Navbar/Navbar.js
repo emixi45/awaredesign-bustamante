@@ -3,6 +3,7 @@ import logoAware from '../mocks/images/logoaware.png';
 import CartWidget from '../CartWidget/CartWidget';
 
 import { Link } from 'react-router-dom';
+import Cart from './../Cart/Cart';
 
 
 const Navbar = () => {
@@ -16,9 +17,7 @@ const Navbar = () => {
                 <Link to='./' className='icons' >Home</Link>
                 <Link to='/Productos' className='icons' >Productos</Link>
                 <Link to='/Contacto' className='icons' >Contactos</Link>
-
-                <button className="icons btn  dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                    <CartWidget />{}</button>
+                <Link to='/Cart' className='icons' ><CartWidget /></Link>
             </div>
             
             

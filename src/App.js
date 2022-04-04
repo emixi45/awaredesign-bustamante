@@ -7,6 +7,7 @@ import Contacto from './components/Contacto/Contacto';
 import Productos from './components/Productos/Productos';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainter from './components/ItemDetailContainer/ItemDetailContainer';
+import Cart from './components/Cart/Cart';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path='/detail/:itemId/' element={<ItemDetailContainter/>}/>
           <Route path='/Productos' element={<Productos/>}/>
           <Route path='/Contacto' element={<Contacto/>}/>
+          <Route path='/Cart' element={<Cart/>}/>
           <Route path='*' element={<Navigate to='/'/>}/>
         </Routes>
         {/*footer */}

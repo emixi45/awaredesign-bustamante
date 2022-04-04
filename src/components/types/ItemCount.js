@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 
 const ItemCount=({max=10,onAdd,setCantidad,cantidad})=>{
     const handleSumar=( ) =>{
@@ -15,7 +17,7 @@ return (
         <span className="mx-2">{cantidad}</span>
         <button className="btn btn-primary" onClick={handleSumar}>+</button>
         <hr/>
-        <button className="btn btn-success my-2" onClick={onAdd}>agregar al carrito</button>
+        <Link to="/Cart"><button className="btn btn-success my-2" onClick={onAdd}>agregar al carrito</button></Link>
     </div>        
 );
 }
