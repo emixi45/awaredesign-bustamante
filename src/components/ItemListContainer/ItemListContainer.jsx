@@ -13,6 +13,7 @@ import individuales from '../mocks/images/individuales.jpg';
 import { useParams } from 'react-router-dom';
 
 
+
 const productos = [
 	{id: 1,nombre: 'espejo',stock: 6,img: espejo,category:'textil'},
 	{id: 2,nombre: 'almohada pastilla',img: almohadapastilla,stock: 10,category:'bazar'},
@@ -28,6 +29,7 @@ const productos = [
 
 
 const ItemListContainer=({elementos})=>{
+
 	const [ListaProductos,setListaProductos]=useState([])
 	const [Cargando,setCargando]=useState(true)
 	const {categoryId} = useParams()

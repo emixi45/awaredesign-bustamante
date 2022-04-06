@@ -61,3 +61,13 @@ h3{
 .img-detalle{
   width: 300px;
 }
+.cart-icon{
+  margin-left: 20px;
+  font-size: 20px;
+  text-decoration: none;
+}
+.cart-number{
+  margin-left: 2px;
+  color: gold;
+  
+}

@@ -1,9 +1,14 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import ItemCount from "./types/ItemCount";
+import { CartContext } from "../context/CartContext";
 
 const ItemDetail=({productoDetail})=>{
+    const {cart,addItem,isInCart}= useContext(CartContext)
+
     const {id,nombre,stock,img}=productoDetail
+    console.log(isInCart(id))/*lo pongo despues por que esta desestructurado , pero podes poner productoDetail.id */
+    console.log(cart)
     const navigate=useNavigate()
     const handleNavigate=()=>{
         navigate(-1)
@@ -16,21 +21,29 @@ const ItemDetail=({productoDetail})=>{
             stock,
             cantidad
         }
-        console.log(itemToAdd)
+        addItem(itemToAdd)
     }
     return(
         <div>
-            <h2>
+            <h2 className="my-3">
                 Detalle del producto: {nombre}
             </h2>
             <img className='img-detalle'src={img} alt={nombre} />
             <p>stock {stock}</p>
-            <ItemCount 
-            max={stock}
-            cantidad={cantidad}
-            setCantidad={setCantidad}
-            onAdd={agregarCarrito}
-            />
+            {stock < 9 && <p style={{color: 'red'}}>Ultimas unidades</p>}
+            {
+                !isInCart(id)
+                    ? <ItemCount
+                        max={stock}
+                        cantidad={cantidad}
+                        setCantidad={setCantidad}
+                        onAdd={agregarCarrito}
+                    />
+                    : <Link to='/cart' className="btn btn-success d-block my-2">Terminar compra</Link>
+            }
+                
+                
+                
             
             <hr/>
             <button className="btn btn-outline-primary" onClick={handleNavigate}>volver</button>

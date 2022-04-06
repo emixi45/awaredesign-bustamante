@@ -17,7 +17,7 @@ return (
         <span className="mx-2">{cantidad}</span>
         <button className="btn btn-primary" onClick={handleSumar}>+</button>
         <hr/>
-        <Link to="/Cart"><button className="btn btn-success my-2" onClick={onAdd}>agregar al carrito</button></Link>
+        <Link to=""><button className="btn btn-success my-2" onClick={onAdd}>agregar al carrito</button></Link>
     </div>        
 );
 }
