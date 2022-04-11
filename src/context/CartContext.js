@@ -19,7 +19,7 @@ export const CartProvider=({children})=>{
         return cart.reduce((acc,prod)=> acc += prod.precio* prod.cantidad,0)
     }
     const vaciarCarrito = () =>{
-        setCart ([])
+        setCart ([]) /* */
     }
     const removeItem =(id) =>{
         setCart(cart.filter ((prod)=> prod.id !==id))

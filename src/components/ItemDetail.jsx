@@ -6,7 +6,7 @@ import { CartContext } from "../context/CartContext";
 const ItemDetail=({productoDetail})=>{
     const {cart,addItem,isInCart}= useContext(CartContext)
 
-    const {id,nombre,stock,img}=productoDetail
+    const {id,nombre,stock,img,precio}=productoDetail
     console.log(isInCart(id))/*lo pongo despues por que esta desestructurado , pero podes poner productoDetail.id */
     console.log(cart)
     const navigate=useNavigate()
@@ -19,7 +19,8 @@ const ItemDetail=({productoDetail})=>{
             id,
             nombre,
             stock,
-            cantidad
+            cantidad,
+            precio
         }
         addItem(itemToAdd)
     }
@@ -30,6 +31,7 @@ const ItemDetail=({productoDetail})=>{
             </h2>
             <img className='img-detalle'src={img} alt={nombre} />
             <p>stock {stock}</p>
+            <h3>precio ${precio}</h3>
             {stock < 9 && <p style={{color: 'red'}}>Ultimas unidades</p>}
             {
                 !isInCart(id)

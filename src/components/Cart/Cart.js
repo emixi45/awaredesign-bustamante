@@ -2,6 +2,9 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
 import {BsFillTrashFill} from "react-icons/bs";
+
+
+
 const Cart = ()=>{
     const {cart,cartTotal,vaciarCarrito,removeItem} = useContext(CartContext)
     console.log(cart)
@@ -15,7 +18,7 @@ const Cart = ()=>{
                 <div key={item.id}>
                     <h4>{item.nombre}</h4>
                     <p>{item.cantidad}</p>
-                    <h5>Total $ {cartTotal}</h5>
+                    <h5>precio $ {item.precio * item.cantidad}</h5>
                     <button 
                     className='btn btn-danger' 
                     onClick={()=>removeItem(item.id)}>
@@ -24,6 +27,7 @@ const Cart = ()=>{
                 </div>
             ))
         }
+        <h3>Total: $ {cartTotal()}</h3>
         <hr/>
         <button className="btn btn-danger" onClick={vaciarCarrito}>Limpiar carrito </button>
         <hr/>

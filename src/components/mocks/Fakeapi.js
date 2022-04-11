@@ -13,16 +13,16 @@ import individuales from '../mocks/images/individuales.jpg';
 
 
 const productos = [
-	{id: 1,nombre: 'espejo',stock: 6,img: espejo,},
-	{id: 2,nombre: 'almohada pastilla',img: almohadapastilla,stock: 10,},
-	{id: 3,nombre: 'almohada',stock: 5,img: almohada,},
-	{id: 4,nombre: 'copa trago',stock: 12,img: copa,},
-	{id: 5,nombre: 'plantitas',stock: 10,img: planta,},
-	{id: 6,nombre: 'set mate',stock: 4,img: setmatero,},
-	{id: 7,nombre: 'budas',stock: 10,img: buda,},
-	{id: 8,nombre: 'canastos',stock: 20,img: canastos,},
-	{id: 9,nombre: 'reloj engrane',stock: 3,img: reloj,},
-	{id: 10,nombre: 'felpudos',stock: 5,img: individuales,},
+	{id: 1,nombre: 'espejo',stock: 6,img: espejo,category:'textil',precio:2500},
+	{id: 2,nombre: 'almohada pastilla',img: almohadapastilla,stock: 10,category:'bazar',precio:3100},
+	{id: 3,nombre: 'almohada',stock: 5,img: almohada,category:'textil',precio:600},
+	{id: 4,nombre: 'copa trago',stock: 12,img: copa,category:'bazar',precio:2150},
+	{id: 5,nombre: 'plantitas',stock: 10,img: planta,category:'textil',precio:200},
+	{id: 6,nombre: 'set mate',stock: 4,img: setmatero,category:'bazar',precio:400},
+	{id: 7,nombre: 'budas',stock: 10,img: buda,category:'textil',precio:2000},
+	{id: 8,nombre: 'canastos',stock: 20,img: canastos,category:'bazar',precio:1600},
+	{id: 9,nombre: 'reloj engrane',stock: 3,img: reloj,category:'textil',precio:15000},
+	{id: 10,nombre: 'felpudos',stock: 5,img: individuales,category:'bazar',precio:300}
 ];
 
 export const getproducts = new Promise((resolve,reject)=>{
