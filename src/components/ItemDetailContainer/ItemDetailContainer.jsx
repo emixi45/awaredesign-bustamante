@@ -1,33 +1,41 @@
-import React, { useEffect, useState } from "react";
-import { getproducts } from "../mocks/Fakeapi";
-import ItemDetail from "../ItemDetail";
+import { useEffect, useState } from "react";
+import { Container } from "react-bootstrap";
 import { useParams } from "react-router-dom";
+import { db } from "../../firebase/config";
+import { doc, getDoc } from "firebase/firestore";
+import ItemDetail from "../ItemDetail"
 
 
 const ItemDetailContainter =()=>{
-    const[productoDetail,setProductoDetail]=useState({})
+    
+    const[productoDetail,setProductoDetail]=useState()
+    
     const[Cargando,setCargando]=useState(true)
+    
     const {itemId} = useParams()
-	console.log(itemId)
+
+
     useEffect(()=>{
         setCargando(true)
-        getproducts
-        .then((res)=>{
-            
-                setProductoDetail(res.find((prod)=> prod.id=== Number(itemId)))
-            
-        })
 
-        .catch((error)=> console.log(error))
-        .finally(()=> setCargando(false))
-    }, [])
+        const docRef= doc(db, "productos", itemId)
+        getDoc(docRef)
+            .then(doc => {
+                setProductoDetail({ id: doc.id, ...doc.data()})
+            })
+            .finally(()=> {
+                setCargando(false)
+            })
+    },[itemId])
     
     return(
-        <div>
-            {Cargando ? <p>Cargando Detalles</p> : <ItemDetail productoDetail={productoDetail}/>}
-        
-        
-    </div>
+        <Container className='my-5'>
+            {
+            Cargando 
+            ? <p>Cargando Detalles</p> 
+            : <ItemDetail productoDetail={productoDetail}/>
+            }
+        </Container>
     )
     
 }

@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
                 <h5 className="card-title">{productos.nombre}</h5>
                 <p className="card-text">{productos.category}</p>
                 <p className="card-text">${productos.precio}</p>
-                <Link to={`/detail/${productos.id}`} href="#" className="btn btn-primary">Ver mas</Link>
+                <Link to={`/detail/${productos.id}`} className="btn btn-primary">Ver mas</Link>
             </div>
         </div>
         
