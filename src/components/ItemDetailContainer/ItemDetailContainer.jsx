@@ -3,7 +3,7 @@ import { Container } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { db } from "../../firebase/config";
 import { doc, getDoc } from "firebase/firestore";
-import ItemDetail from "../ItemDetail"
+import ItemDetail from "../ItemDetail/ItemDetail"
 
 
 const ItemDetailContainter =()=>{

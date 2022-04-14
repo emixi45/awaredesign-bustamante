@@ -13,7 +13,7 @@ const ItemCount=({max=10,onAdd,setCantidad,cantidad})=>{
 return (
     
     <div>
-        <button className="btn btn-ouline-primary" onClick={handleRestar}>-</button>
+        <button className="btn btn-danger" onClick={handleRestar}>-</button>
         <span className="mx-2">{cantidad}</span>
         <button className="btn btn-primary" onClick={handleSumar}>+</button>
         <hr/>

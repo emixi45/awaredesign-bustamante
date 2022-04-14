@@ -1,14 +1,14 @@
 import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import ItemCount from "./types/ItemCount";
-import { CartContext } from "../context/CartContext";
+import ItemCount from "../itemCount/ItemCount";
+import { CartContext } from "../../context/CartContext";
 
 const ItemDetail=({productoDetail})=>{
-    const {cart,addItem,isInCart}= useContext(CartContext)
+    const {addItem,isInCart}= useContext(CartContext)
+    const cargarimg=require.context('../mocks/images',true)
 
-    const {id,nombre,stock,img,precio}=productoDetail
-    console.log(isInCart(id))/*lo pongo despues por que esta desestructurado , pero podes poner productoDetail.id */
-    console.log(cart)
+    const {id,nombre,stock,precio}=productoDetail
+   /* console.log(isInCart(id))lo pongo despues por que esta desestructurado , pero podes poner productoDetail.id */
     const navigate=useNavigate()
     const handleNavigate=()=>{
         navigate(-1)
@@ -29,7 +29,7 @@ const ItemDetail=({productoDetail})=>{
             <h2 className="my-3">
                 Detalle del producto: {nombre}
             </h2>
-            <img className='img-detalle'src={img} alt={nombre} />
+            <img className='img-detalle'src={cargarimg(`./${productoDetail.img}.png`)} alt={nombre} />
             <p>stock {stock}</p>
             <h3>precio ${precio}</h3>
             {stock < 9 && <p style={{color: 'red'}}>Ultimas unidades</p>}
