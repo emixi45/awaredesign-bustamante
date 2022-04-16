@@ -9,12 +9,12 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ItemDetailContainter from './components/ItemDetailContainer/ItemDetailContainer';
 import Cart from './components/Cart/Cart';
 import { CartProvider } from './context/CartContext';
+import Checkout from './components/Checkout/Checkout';
 
 
 function App() {
   return (
     <CartProvider>
-      <div className="App">
         <BrowserRouter>
           <Navbar />
           <Routes>
@@ -24,11 +24,11 @@ function App() {
             <Route path='/Productos' element={<Productos />} />
             <Route path='/Contacto' element={<Contacto />} />
             <Route path='/Cart' element={<Cart />} />
+            <Route path='/Checkout' element={<Checkout />} />
             <Route path='*' element={<Navigate to='/' />} />
           </Routes>
           {/*footer */}
         </BrowserRouter>
-      </div>
     </CartProvider>
   );
 }

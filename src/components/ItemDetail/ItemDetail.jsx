@@ -25,28 +25,29 @@ const ItemDetail=({productoDetail})=>{
         addItem(itemToAdd)
     }
     return(
-        <div>
-            <h2 className="my-3">
-                Detalle del producto: {nombre}
-            </h2>
-            <img className='img-detalle'src={cargarimg(`./${productoDetail.img}.png`)} alt={nombre} />
-            <p>stock {stock}</p>
-            <h3>precio ${precio}</h3>
-            {stock < 9 && <p style={{color: 'red'}}>Ultimas unidades</p>}
-            {
-                !isInCart(id)
-                    ? <ItemCount
-                        max={stock}
-                        cantidad={cantidad}
-                        setCantidad={setCantidad}
-                        onAdd={agregarCarrito}
-                    />
-                    : <Link to='/cart' className="btn btn-success d-block my-2">Terminar compra</Link>
-            }
-                
-                
-                
+        <div >
+            <div className="detalle-container">
+
             
+            <img className='img-detalle'src={cargarimg(`./${productoDetail.img}.png`)} alt={nombre} />
+            <div className="detalles">
+                    <h2 className="my-3">{nombre}</h2>
+                    <h3>stock {stock}</h3>
+                    <h3>precio ${precio}</h3>
+                    {stock < 9 && <p style={{ color: 'red' }}>Ultimas unidades</p>}
+                    {
+                        !isInCart(id)
+                            ? <ItemCount
+                                max={stock}
+                                cantidad={cantidad}
+                                setCantidad={setCantidad}
+                                onAdd={agregarCarrito}
+                            />
+                            : <Link to='/cart' className="btn btn-success my-2">Terminar compra</Link>
+                    }</div>
+            
+            
+            </div>
             <hr/>
             <button className="btn btn-outline-primary" onClick={handleNavigate}>volver</button>
         </div>

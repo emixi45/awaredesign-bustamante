@@ -9,6 +9,7 @@ import { db } from '../../firebase/config';
 
 
 
+
 const ItemListContainer=()=>{
 
 	const [ListaProductos,setListaProductos]=useState([])
@@ -39,7 +40,7 @@ return(
 			
 			{
 			Cargando
-			 ? <p>cargando productos...</p> 
+			 ? <p className='cargando'>cargando productos...</p> 
 			 : <ItemList ListaProductos={ListaProductos}/>}
 			
 		</div>

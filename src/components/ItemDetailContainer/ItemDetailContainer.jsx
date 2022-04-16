@@ -32,7 +32,7 @@ const ItemDetailContainter =()=>{
         <Container className='my-5'>
             {
             Cargando 
-            ? <p>Cargando Detalles</p> 
+            ? <p className="cargando">Cargando Detalles</p> 
             : <ItemDetail productoDetail={productoDetail}/>
             }
         </Container>
