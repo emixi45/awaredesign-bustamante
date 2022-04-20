@@ -47,11 +47,12 @@ h3{
   font-size: 20px;
 }
 .imagen-producto{
+  padding-top: 20px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(1, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  grid-column-gap: 100px;
+  grid-row-gap: 20px;
   justify-items: center;
 
 }
@@ -76,6 +77,9 @@ h3{
   text-decoration: none;
   color: black;
 }
+.cart-icon:hover{
+  color: rgb(54, 54, 54);
+}
 .cart-number{
   margin-left: 2px;
   color: gold;
@@ -95,4 +99,45 @@ h3{
 }
 .cargando{
   text-align: center;
+}
+.botones-carrito{
+  text-decoration: none;
+
+}
+.botones-carritos{
+  text-decoration: none;
+  display: flex;
+  justify-content: end;
+
+}
+.grid-carrito{
+  display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: 1fr;
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+}
+.img-home{
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  
+}
+.slider{
+  display: flex;
+  cursor: grab;
+}
+
+.iitem{
+  width: 20rem;
+  height: 20rem;
+}
+.iitem img {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  pointer-events: none;
+}
+.subtitulo{
+  color: black;
 }

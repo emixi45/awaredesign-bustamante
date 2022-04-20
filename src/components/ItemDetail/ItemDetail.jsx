@@ -32,8 +32,8 @@ const ItemDetail=({productoDetail})=>{
             <img className='img-detalle'src={cargarimg(`./${productoDetail.img}.png`)} alt={nombre} />
             <div className="detalles">
                     <h2 className="my-3">{nombre}</h2>
-                    <h3>stock {stock}</h3>
-                    <h3>precio ${precio}</h3>
+                    <h3 className="my-3">stock {stock}</h3>
+                    <h3 className="my-3">precio ${precio}</h3>
                     {stock < 9 && <p style={{ color: 'red' }}>Ultimas unidades</p>}
                     {
                         !isInCart(id)

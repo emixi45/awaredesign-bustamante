@@ -8,7 +8,7 @@ const CartWidget=() =>{
     const {cartQuantity}=useContext(CartContext)
 
     return(
-        <Link to={"/cart"} className="cart-icon">
+        <Link to="/cart" className="cart-icon">
             <BsFillCartFill/>
             <span className="cart-number">{cartQuantity()}</span>
         </Link>

@@ -13,8 +13,8 @@ const ItemCount=({max=10,onAdd,setCantidad,cantidad})=>{
 return (
     
     <div>
-        <button className="btn btn-danger" onClick={handleRestar}>-</button>
-        <span className="mx-2">{cantidad}</span>
+        <button className="btn btn-danger my-3" onClick={handleRestar}>-</button>
+        <span className="mx-3">{cantidad}</span>
         <button className="btn btn-primary" onClick={handleSumar}>+</button>
         <hr/>
         <Link to=""><button className="btn btn-success my-2" onClick={onAdd}>agregar al carrito</button></Link>
