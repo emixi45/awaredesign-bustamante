@@ -26,10 +26,8 @@ const ItemDetail=({productoDetail})=>{
     }
     return(
         <div >
-            <div className="detalle-container">
-
-            
-            <img className='img-detalle'src={cargarimg(`./${productoDetail.img}.png`)} alt={nombre} />
+            <div className="detalle-container ">
+                <img className='img-detalle 'src={cargarimg(`./${productoDetail.img}.png`)} alt={nombre} />
             <div className="detalles">
                     <h2 className="my-3">{nombre}</h2>
                     <h3 className="my-3">stock {stock}</h3>

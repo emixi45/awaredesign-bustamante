@@ -28,6 +28,8 @@ const Cart = ()=>{
                         onClick={()=>removeItem(item.id)}>
                             eliminar
                             </Link>
+                            
+                        
                     </div>
                 </div>
 

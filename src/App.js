@@ -19,14 +19,14 @@ function App() {
         <BrowserRouter>
           <Navbar />
           <Routes>
-            <Route path='/' element={<ItemListContainer />} />
+            <Route path='/' element={<Home />} />
             <Route path='/category/:categoryId' element={<ItemListContainer />} />
-            <Route path='/detail/:itemId/' element={<ItemDetailContainter />} />
+            <Route path='/Item/:itemId/' element={<ItemDetailContainter />} />
             <Route path='/Productos' element={<Productos />} />
             <Route path='/Home' element={<Home />} />
             <Route path='/Cart' element={<Cart />} />
             <Route path='/Checkout' element={<Checkout />} />
-            <Route path='*' element={<Navigate to='/' />} />
+            <Route path='*' element={<Navigate to='/Home' />} />
           </Routes>
           {/*footer */}
         </BrowserRouter>
