@@ -41,7 +41,7 @@ export const CartProvider=({children})=>{
             title: 'Queres borrar todo el carrito?',
             icon: 'warning',
             showCancelButton: true,
-            confirmButtonText: 'Yes, Borrar!',
+            confirmButtonText: 'Si, Borrar!',
             cancelButtonText: 'No, Cancelar!',
             reverseButtons: true
           }).then((result) => {
