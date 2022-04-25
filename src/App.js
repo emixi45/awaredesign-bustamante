@@ -8,7 +8,7 @@ import Productos from './components/Productos/Productos';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainter from './components/ItemDetailContainer/ItemDetailContainer';
 import Cart from './components/Cart/Cart';
-import { CartProvider } from './context/CartContext';
+import { CartProvider } from './Context/CartContext';
 import Checkout from './components/Checkout/Checkout';
 
 

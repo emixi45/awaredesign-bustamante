@@ -11,8 +11,10 @@ const Home = ()=>{
                     <h1>Bienvenido</h1>
 
                 </div>
+                <div className="d-flex justify-content-center">
+                    <Slide />
 
-                <Slide />
+                </div>
             </div>
             <div className="d-flex justify-content-center my-4 subtitulo">
 

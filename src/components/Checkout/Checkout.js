@@ -1,12 +1,12 @@
 import React, { useContext, useState } from "react";
-import {CartContext} from "../../context/CartContext"
+import {CartContext} from "../../Context/CartContext"
 import {db} from "../../firebase/config"
 import { collection, addDoc, Timestamp, updateDoc, doc, getDoc } from "firebase/firestore";
 import { Link, Navigate } from "react-router-dom";
 import swal from 'sweetalert2';
 
 const Checkout = ()=> {
-    const {cart,cartTotal,vaciarCarrito} = useContext (CartContext)
+    const {cart,cartTotal,vaciarTodo} = useContext (CartContext)
     
     const [orderId, setOrderId]=useState(null)
 
@@ -16,7 +16,6 @@ const Checkout = ()=> {
         tel:''
     })
     const handleInputChange = (e) =>{
-        console.log(e.target.value)
         setValues({
             ...values,[e.target.name] : e.target.value
         })
@@ -68,7 +67,7 @@ const Checkout = ()=> {
 
                     console.log(doc.id)
                     setOrderId(doc.id)
-                    vaciarCarrito()
+                    vaciarTodo()
                 })
 
 
@@ -80,7 +79,12 @@ const Checkout = ()=> {
         return <div className="container my-5">
                 <h2>Tu orden se registro Exitosamente!!</h2>
                 <hr/>
-                <h4>guarda tu numero de orden es {orderId}</h4>
+                <h4>Guarda tu numero de orden es {orderId}</h4>
+                <hr/>
+                <h4>Datos de comprador:</h4>
+                <h4>Nombre: {values.nombre}</h4>
+                <h4>Email: {values.email}</h4>
+                <h4>telefono: {values.tel}</h4>
                 <Link to="/" className="btn btn-primary">Home</Link>
         </div>
     }
@@ -125,6 +129,8 @@ const Checkout = ()=> {
                         value={values.emailConfirm}
                         name='emailConfirm'
                         onChange={handleInputChange}
+                        
+                        
                     />
                     <input className="form-control  my-2"
                         type={'tel'}

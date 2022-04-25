@@ -55,6 +55,9 @@ export const CartProvider=({children})=>{
           })
         
     }
+    const vaciarTodo = () =>{
+      setCart ([])
+    }
     const removeItem =(id) =>{
         Swal.fire({
             position: 'top-end',
@@ -73,7 +76,8 @@ export const CartProvider=({children})=>{
             cartQuantity,
             cartTotal,
             vaciarCarrito,
-            removeItem
+            removeItem,
+            vaciarTodo
         }}>
             {children}
         </CartContext.Provider>
